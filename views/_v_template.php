@@ -28,6 +28,7 @@
             <a href='/users/logout'>Logout</a>
             <a href='/file'>Files</a>
             <a href='/file/add'>Add File</a>
+            <a href='/projects'>Project</a>            
 
         <!-- Menu options for users who are not logged in -->
         <?php else: ?>

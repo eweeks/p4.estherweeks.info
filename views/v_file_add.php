@@ -34,22 +34,33 @@
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="camera" placeholder="Camera" name='camera' title="Camera">
 				</div>		
-		
-				<label class="col-sm-2 control-label">Enter ISO</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" id="iso" placeholder="ISO" name='iso' title="ISO">
-				</div>		
 
-				<label class="col-sm-2 control-label">Enter Color</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" id="color" placeholder="Color" name='color' title="Color">
-				</div>
-
-				<label class="col-sm-2 control-label">Positive or Negative</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" id="pos_neg" placeholder="Positive or Negative" name='pos_neg' title="Positive">
-				</div>
 				
+			<label class="col-sm-2 control-label" for="iso">Choose ISO</label>
+			<select name="iso" id="iso">
+				<option>100</option>
+				<option>200</option>
+				<option>400</option>
+				<option>800</option>
+			</select>
+			<br>
+				
+
+			<label class="col-sm-2 control-label" for="color">Color</label>
+			<select name="color" id="color">
+				<option>Color</option>
+				<option>Black & White</option>
+				<option>UV</option>
+			</select>
+			<br>
+
+			<label class="col-sm-2 control-label" for="pos_neg">Positive or Negative</label>
+			<select name="pos_neg" id="pos_neg">
+				<option>Positive</option>
+				<option>Negative</option>
+			</select>
+			
+				<br>
 				<label class="col-sm-2 control-label">Push</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="push" placeholder="Push" name='push' title="Push">
@@ -65,17 +76,20 @@
 					<input type="text" class="form-control" id="stored" placeholder="Stored" name='stored' title="Stored">
 				</div>
 
-				<label class="col-sm-2 control-label">Scanned?</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" id="scanned" placeholder="Scanned" name='scanned' title="Scanned">
-				</div>
-
+				
+			<label class="col-sm-2 control-label" for="Scanned">Scanned?</label>
+			<select name="scanned" id="scanned">
+				<option>Yes</option>
+				<option>No</option>
+			</select>
+				
+				<br>
 				<label class="col-sm-2 control-label">Any projects used in</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="projects" placeholder="Projects" name='projects' title="Projects">
 				</div>
 		
-			<label class="col-sm-2 control-label for="Starred">Starred?</label>
+			<label class="col-sm-2 control-label" for="Starred">Starred?</label>
 			<select name="starred" id="starred">
 				<option>Yes</option>
 				<option>No</option>
