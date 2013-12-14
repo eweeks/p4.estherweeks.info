@@ -23,12 +23,12 @@ class projects_controller extends base_controller {
 
 
 		# Query
-		$q = 'SELECT project_name, project_description, created
+		$q = 'SELECT project_name, project_description, project_id, created
 			FROM projects';
 
 		# Run the query, store the results in the variable $posts
 		$projects = DB::instance(DB_NAME)->select_rows($q);
-
+			var_dump($projects);
 		# Pass data to the View
 		$this->template->content->projects = $projects;
 
@@ -41,32 +41,12 @@ class projects_controller extends base_controller {
 /*-------------------------------------------------------------------------------------------------
 		View Function for Projects
 -------------------------------------------------------------------------------------------------*/		
-		public function view() {
+		public function view($project_id) {
 	
 		# Set up the View
 		$this->template->content = View::instance('v_projects_view');
 		$this->template->title   = "Projects - View";
 
-
-		# Query
-	/*$q = 'SELECT project_name, project_description, created
-			FROM projects';
-
-	number, date, name, camera, format, tags, file_id
-
-				$q = 'SELECT 
-				projects.project_name,
-				projects.project_description,
-				projects.created,
-				files_projects.project_id AS file_id,
-				files.name,
-				files.number
-			FROM projects
-			INNER JOIN files_projects
-				ON projects.project_id = files_projects.project_id
-			INNER JOIN users 
-				ON posts.user_id = users.user_id
-			WHERE users_users.user_id = '.$this->user->user_id;*/
 			
 		$q ='SELECT 
 				projects.project_name,
@@ -82,12 +62,12 @@ class projects_controller extends base_controller {
 INNER JOIN files
 ON files.file_id = files_projects.file_id
 
-			WHERE files_projects.project_id=2';
+			WHERE files_projects.project_id=';
 
-
-		# Run the query, store the results in the variable $posts
-		$projects = DB::instance(DB_NAME)->select_rows($q);
-
+		echo $q.$project_id;
+		# Run the query, store the results in the variable $projects
+		$projects = DB::instance(DB_NAME)->select_rows($q.$project_id);
+	var_dump($projects);
 		# Pass data to the View
 		$this->template->content->projects = $projects;
 
