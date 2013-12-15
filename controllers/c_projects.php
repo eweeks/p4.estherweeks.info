@@ -28,7 +28,7 @@ class projects_controller extends base_controller {
 
 		# Run the query, store the results in the variable $posts
 		$projects = DB::instance(DB_NAME)->select_rows($q);
-			var_dump($projects);
+	
 		# Pass data to the View
 		$this->template->content->projects = $projects;
 
@@ -51,11 +51,14 @@ class projects_controller extends base_controller {
 		$q ='SELECT 
 				projects.project_name,
 				projects.project_description,
+				projects.project_id,
 				projects.created,
 				files_projects.project_id AS project_id,
                                 files_projects.file_id AS file_id,
 				files.name,
-				files.number	
+				files.number,
+				files.stored,
+				files.date
 			FROM projects
 			INNER JOIN files_projects
     			ON projects.project_id = files_projects.project_id
@@ -64,10 +67,19 @@ ON files.file_id = files_projects.file_id
 
 			WHERE files_projects.project_id=';
 
-		echo $q.$project_id;
 		# Run the query, store the results in the variable $projects
 		$projects = DB::instance(DB_NAME)->select_rows($q.$project_id);
-	var_dump($projects);
+		
+		$n='SELECT project_name, project_description, project_id
+        FROM projects
+        WHERE project_id like '.$project_id;
+		
+		$name = DB::instance(DB_NAME)->select_rows($n);
+		
+		$_SESSION['project'] = DB::instance(DB_NAME)->select_rows($n);
+			
+		# Pass data to the View
+		$this->template->content->name = $name;
 		# Pass data to the View
 		$this->template->content->projects = $projects;
 
@@ -75,6 +87,140 @@ ON files.file_id = files_projects.file_id
 		echo $this->template;	
 
 	}
+
+/*-------------------------------------------------------------------------------------------------
+		Add Function for Projects - redirects to v_projects_added page
+-------------------------------------------------------------------------------------------------*/
+	public function add($error = NULL) {
+
+		# Setup view
+		$this->template->content = View::instance('v_projects_add');
+		$this->template->title   = "Add Project";
+		
+		# Pass data to the view
+		$this->template->content->error = $error;
+
+		# Render template
+		echo $this->template;
+
+	}
+	
+/*-------------------------------------------------------------------------------------------------
+		p_add Function for Projects	**adds projects and checks for errors
+-------------------------------------------------------------------------------------------------*/
+	public function p_add() {
+
+		# Setup view
+		//$this->template->content = View::instance('v_projects_files');
+		//$this->template->title   = "Project Added";
+
+		foreach($_POST as $key => $value){
+
+			if((empty($value)) || (!$value) || (trim($value) == "") ){
+				# Send them back to the login page
+				Router::redirect("/file/add/error");
+			}
+		}
+		
+
+		# Unix timestamp of when this post was created / modified
+		$_POST['created']  = Time::now();
+		$_POST['modified'] = Time::now();
+		
+
+		# Insert
+		# Insert Method Sanitizes
+		$project_id = DB::instance(DB_NAME)->insert('projects', $_POST);
+		
+		#gets project id from project inserted
+		$id='SELECT *
+            FROM projects 
+            WHERE created = '.$_POST['created'];
+
+		$_SESSION['project'] = DB::instance(DB_NAME)->select_rows($id);
+		
+		//print_r($project);
+		# Pass data to the View
+		//$this->template->content->project = $project;
+		
+		# Send them back to the main index.
+		Router::redirect('/projects/files');
+		
+		//# Render template
+		//echo $this->template;
+
+	}
+/*-------------------------------------------------------------------------------------------------
+		Files Function for Projects	**allows for adding files to project
+-------------------------------------------------------------------------------------------------*/	
+	public function files(){
+		
+		# Setup view
+		$this->template->content = View::instance('v_projects_files');
+		$this->template->title   = "Add Files to Project";
+		
+		//print_r($_SESSION['project']);
+		$projects=$_SESSION['project'];
+		//unset($_SESSION['project']);
+		//echo $project;
+		$this->template->content->projects = $projects;
+		//print_r($projects);
+	
+		# Query
+		$q = 'SELECT number, date, name, camera, format, tags, file_id
+			FROM files';
+
+		# Run the query, store the results in the variable $files
+		$files = DB::instance(DB_NAME)->select_rows($q);
+
+		# Pass data to the View
+		$this->template->content->files = $files;
+		# Render template
+		echo $this->template;
+	
+	
+	}
+	
+/*-------------------------------------------------------------------------------------------------
+		f_add Function for Projects	**adds files to projects checks for errors
+-------------------------------------------------------------------------------------------------*/
+	public function f_add($file_id) {
+		
+		//# Set up the View
+		$this->template->content = View::instance('v_projects_added');
+		$this->template->title   = "Projects";
+		print_r($_SESSION['project']);
+		$projects=$_SESSION['project'];
+		
+		
+		foreach($projects as $project): 
+			$project=$project['project_id'];
+		endforeach;
+		
+		//$id= $project['project_id'];
+		//echo $project['project_id'];
+		$q= Array(
+			"project_id" => $project,
+			"file_id" => $file_id,
+			"created" => Time::now()
+		);
+		
+
+		# Run the query, store the results in the variable $files
+		//$files = DB::instance(DB_NAME)->select_rows($q);
+		
+		# Insert Method Sanitizes
+		$files = DB::instance(DB_NAME)->insert('files_projects', $q);
+
+		
+		# Pass data to the View
+		//$this->template->content->files = $files;
+		
+		//# Render template
+		echo $this->template;
+
+	}
+	
 	
 	
 	

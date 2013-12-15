@@ -1,5 +1,5 @@
 <h2>Index page for projects</h2>
-
+<a href='/projects/add'>Add Project</a>
 	<?php foreach($projects as $project): ?>
 
 		<article>
@@ -14,3 +14,4 @@
 		</article>
 
 	<?php endforeach; ?>
+	
