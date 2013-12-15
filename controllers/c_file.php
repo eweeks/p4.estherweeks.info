@@ -22,7 +22,7 @@ class file_controller extends base_controller {
 		$this->template->title   = "File";
 
 		# Query
-		$q = 'SELECT number, date, name, camera, format, tags, file_id
+		$q = 'SELECT number, date_start, name, camera, format, tags, color, file_id
 			FROM files';
 
 		# Run the query, store the results in the variable $files
@@ -99,7 +99,7 @@ class file_controller extends base_controller {
 		
 		
 		DB::instance(DB_NAME)->select_row($q.$file_id);
-		 echo $q.$file_id;
+		 
 		 $more = DB::instance(DB_NAME)->select_row($q.$file_id);
 		# Send them to more
 		//Router::redirect("/file/more");
