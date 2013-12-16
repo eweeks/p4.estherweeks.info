@@ -9,7 +9,7 @@
 			<p>File name:<?=$project['name']?></p>
 			<p>File Number:<?=$project['number']?></p>
 			<p>Stored:<?=$project['stored']?></p>
-			<p>Date of file:<?=$project['date']?> </p>
+			<p>Date of file:<?=$project['date_start']?> </p>
 			<br><br>
 		</article>
 	<?php endforeach; ?>

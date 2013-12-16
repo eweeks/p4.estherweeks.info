@@ -18,7 +18,7 @@
 
 <?php foreach($files as $file): ?>
 
-<tr><td><?=$file['name']?></td> <td><?=$file['date']?></td>  <td><?=$file['camera']?></td>
+<tr><td><?=$file['name']?></td> <td><?=$file['date_start']?></td>  <td><?=$file['camera']?></td>
 	 <td><?=$file['number']?></td> <td><?=$file['format']?></td> <td><?=$file['tags']?></td>
 	<td><a href='/projects/f_add/<?=$file['file_id']?>' title="More Info">Add File</a></td></tr>
 	<?php endforeach; ?>

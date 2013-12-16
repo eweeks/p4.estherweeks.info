@@ -1,21 +1,24 @@
 <div class="row">
 	<div class="col-md-12 col-sm-12">
-		<h2 >Add a File</h2>
+		<h2 >Add a Project</h2>
 		<form method='POST' action='/projects/p_add' class="form-horizontal" role="form">
 			<!--	New File Input	-->
 			<div class="form-group">
 				<p>Enter info for a new project here</p>
-				<label class="col-sm-2 control-label">Enter Name</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" id="project_name" placeholder="Project Name" 
-					name='project_name' title="Project Name">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Enter Name</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="project_name" placeholder="Project Name" 
+						name='project_name' title="Project Name">
+					</div>
 				</div>
-				
-				<label class="col-sm-2 control-label">Enter Description</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" id="project_description" placeholder="Project Description" 
-					name='project_description' title="Project Description">
-				</div>	
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Enter Description</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="project_description" placeholder="Project Description" 
+						name='project_description' title="Project Description">
+					</div>
+				</div>
 
 			</div>
 			<!--	Submit New Post	-->

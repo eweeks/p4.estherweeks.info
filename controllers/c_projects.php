@@ -58,7 +58,7 @@ class projects_controller extends base_controller {
 				files.name,
 				files.number,
 				files.stored,
-				files.date
+				files.date_start
 			FROM projects
 			INNER JOIN files_projects
     			ON projects.project_id = files_projects.project_id
@@ -167,7 +167,7 @@ ON files.file_id = files_projects.file_id
 		//print_r($projects);
 	
 		# Query
-		$q = 'SELECT number, date, name, camera, format, tags, file_id
+		$q = 'SELECT number, date_start, date_end, name, camera, format, tags, file_id
 			FROM files';
 
 		# Run the query, store the results in the variable $files
@@ -189,7 +189,6 @@ ON files.file_id = files_projects.file_id
 		//# Set up the View
 		$this->template->content = View::instance('v_projects_added');
 		$this->template->title   = "Projects";
-		print_r($_SESSION['project']);
 		$projects=$_SESSION['project'];
 		
 		
