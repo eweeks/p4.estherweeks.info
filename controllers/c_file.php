@@ -66,10 +66,14 @@ class file_controller extends base_controller {
 		$this->template->title   = "File Added";
 
 		foreach($_POST as $key => $value){
-
-			if((empty($value)) || (!$value) || (trim($value) == "") ){
-				# Send them back to the login page
-				Router::redirect("/file/add/error");
+				//print_r($_POST);
+				if($key=="number" || $key=="name" ||
+					$key=="date_start" || $key=="tags" ||
+					$key=="stored"){
+					if((empty($value)) || (!$value) || (trim($value) == "") ){
+					# Send them back to the login page
+					Router::redirect("/file/add/error");
+					}
 			}
 		}
 		

@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-12 col-sm-12">
 		<h2 >Add a File</h2>
-		<form method='POST' action='/file/f_add' class="form-horizontal" role="form">
+		<form method='POST' action='/file/f_add' class="form-horizontal" role="form" id="file_form">
 			<!--	New File Input	-->
 				<p>Enter info for a new file here</p>
 			
@@ -9,31 +9,36 @@
 				<label class="col-sm-2 control-label">Enter Number</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="number" placeholder="Number" 
-					name='number' title="Enter Catalog Number">
+					name='number' maxlength="20">
 				</div>
+				<div class="status"></div>
 			</div>
 			
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Enter Name</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="name" placeholder="Name" 
-					name='name' title="Enter Name of File">
-				</div>				
+					name='name' maxlength="20">
+				</div>	
+				<div class="status"></div>
 			</div>
+			
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Enter Start Date</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control datepicker" id="date_start" 
-					placeholder="Date-Start" name='date_start' title="Enter Date for Earliest Item
-					in File">
-				</div>				
+					placeholder="Date-Start" name='date_start' maxlength="10">
+				</div>	
+				<div class="status"></div>
 			</div>
+			
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Enter End Date</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control datepicker" id="date_end" 
-					placeholder="Date-End" name='date_end' title="Enter Date for Latest Item in File">
+					placeholder="Date-End" name='date_end' maxlength="10" >
 				</div>	
+				<div class="status"></div>
 			</div>
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="Scanned">Photographer</label>
@@ -128,22 +133,26 @@
 				<label class="col-sm-2 control-label">Push</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="push" placeholder="Push" 
-					name='push' title="Enter Any Push Processing" >
+					name='push' title="Enter Any Push Processing" maxlength="10" >
 				</div>
+				<div class="status"></div>
 			</div>
+			
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Enter tags</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="tags" placeholder="Tags" 
-					name='tags' title="Enter Keywords Applicable to Files">
+					name='tags'>
 				</div>
+				<div class="status"></div>
 			</div>
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Enter Where Stored</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="stored" placeholder="Stored" 
-					name='stored' title="Enter Where File is Stored">
+					name='stored'>
 				</div>
+				<div class="status"></div>
 			</div>
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="Scanned">Scanned?</label>
@@ -171,8 +180,8 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="Starred">Starred?</label>
 				<select name="starred" id="starred" title="Star Image to Mark as Important">
-					<option>Yes</option>
 					<option>No</option>
+					<option>Yes</option>
 				</select>
 			</div>
 			<!--	Submit New Post	-->

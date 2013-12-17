@@ -14,7 +14,7 @@ $(document).ready(function() {
 
 	
 	//Tooltip
-		 $( document ).tooltip();
+		// $( document ).tooltip();
 		 
 	//making datepicker draggable
 	$(".ui-datepicker").draggable();	
