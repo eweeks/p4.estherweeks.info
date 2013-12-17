@@ -118,7 +118,7 @@ ON files.file_id = files_projects.file_id
 
 			if((empty($value)) || (!$value) || (trim($value) == "") ){
 				# Send them back to the login page
-				Router::redirect("/file/add/error");
+				Router::redirect("/projects/add/error");
 			}
 		}
 		
@@ -165,6 +165,11 @@ ON files.file_id = files_projects.file_id
 		//echo $project;
 		$this->template->content->projects = $projects;
 		//print_r($projects);
+		
+		//get this projects id
+		foreach($projects as $project): 
+			$id=$project['project_id'];
+		endforeach;
 	
 		# Query
 		$q = 'SELECT number, date_start, date_end, name, camera, format, tags, file_id
@@ -172,7 +177,38 @@ ON files.file_id = files_projects.file_id
 
 		# Run the query, store the results in the variable $files
 		$files = DB::instance(DB_NAME)->select_rows($q);
-
+		
+		$q2= 'SELECT file_id
+			FROM files_projects WHERE project_id='.$id;
+			
+		# Run the query, store the results in the variable $files
+		$items = DB::instance(DB_NAME)->select_rows($q2);
+		//print_r($files);
+		//print_r($items);
+		$t= array();
+		foreach($items as $item){
+			array_push($t, $item['file_id']);
+			//$t=$t.$item['file_id'];
+					//echo"Not in Array "+$file['file_id'];
+			
+		
+		};
+		//echo "t is".$t;
+		//print_r($t);
+		//checks if each file is already in the project
+	//	foreach($files as $file){
+	//			$check=$file['file_id'];
+	//			if(in_array($file['file_id'], $items) ){
+	//				print_r("Already in Array "); //+ $file['file_id'];
+	//			}
+	//				//echo"Not in Array "+$file['file_id'];
+	//			
+	//		
+	//	};
+		
+		# Pass data to the View
+		$this->template->content->t = $t;
+		
 		# Pass data to the View
 		$this->template->content->files = $files;
 		# Render template

@@ -1,73 +1,90 @@
-<!--<table>
+<div>
+<table id="more" class="display">
 <thead>
 	<tr>
-		<th>Number</th>
-		<th>Date Start</th>
-		<th>Date End</th>
-		<th>Name</th>
-		<th>Format</th>
-		<th>File Base</th>
-		<th>Camera</th>
-		<th>ISO</th>
-		<th>Color</th>
-		<th>Positive or Neg</th>
-		<th>Push</th>
-		<th>Tags</th>
-		<th>Stored</th>
-		<th>Scanned</th>
-		<th>Projects</th>
-		<th>Starred</th>
-		<th>Created</th>
-		<th>Modified</th>
+		<th>Category</th>
+		<th>File Info</th>
 		
 	</tr>
 </thead>
 <tbody>
 
 <tr>
+	<td>Number</td>
 	<td><?=$more['number']?></td>
+</tr>
+<tr>
+	<td>Date Start</td>
 	<td><?=$more['date_start']?></td>
+</tr>
+<tr>
+	<td>Date End</td>
 	<td><?=$more['date_end']?></td>
+</tr>
+<tr>
+	<td>Name</td>	
 	<td><?=$more['name']?></td> 
+</tr>
+<tr>
+	<td>Format</td>
 	<td><?=$more['format']?></td>
-	<td><?=$more['film_base']?></td>	 
+</tr>
+<tr>
+	<td>File Base</td>
+	<td><?=$more['film_base']?></td>	
+</tr>
+<tr>
+	<td>Camera</td>
 	<td><?=$more['camera']?></td>
+</tr>
+<tr>
+	<td>ISO</td>
 	<td><?=$more['iso']?></td>	
+</tr>
+<tr>
+	<td>Color</td>
 	<td><?=$more['color']?></td>
+</tr>
+<tr>
+	<td>Positive or Neg</td>
 	<td><?=$more['pos_neg']?></td>
+</tr>
+<tr>
+	<td>Push</td>
 	<td><?=$more['push']?></td>	
+</tr>
+<tr>	
+	<td>Tags</td>
 	<td><?=$more['tags']?></td>
+</tr>
+<tr>	
+	<td>Stored</td>
 	<td><?=$more['stored']?></td>
+</tr>
+<tr>	
+	<td>Scanned</td>
 	<td><?=$more['scanned']?></td>
+</tr>
+<tr>	
+	<td>Projects</td>
 	<td><?=$more['projects']?></td>
+</tr>
+<tr>	
+	<td>Starred</td>
 	<td><?=$more['starred']?></td>
+</tr>
+<tr>	
+	<td>Created</td>
 	<td><?=Time::display($more['created'],'Y-m-d G:i')?></td>
+</tr>
+<tr>	
+	<td>Modified</td>
 	<td><?=Time::display($more['modified'],'Y-m-d G:i')?></td>	
 
-	</tr>
+</tr>
 </tbody>
-</table>-->
-		<p>Number: <?=$more['number']?></p>
-		<p>Date Start: <?=$more['date_start']?></p>
-		<p>Date End: <?=$more['date_end']?></p>
-		<p>Name: <?=$more['name']?></p>
-		<p>Format: <?=$more['format']?></p>
-		<p>Film Base: <?=$more['film_base']?></p>
-		<p>Camera: <?=$more['camera']?></p>
-		<p>ISO: <?=$more['iso']?></p>
-		<p>Color: <?=$more['color']?></p>
-		<p>Positive or Neg: <?=$more['pos_neg']?></p>
-		<p>Push: <?=$more['push']?></p>
-		<p>Tags: <?=$more['tags']?></p>
-		<p>Stored: <?=$more['stored']?></p>
-		<p>Scanned: <?=$more['scanned']?></p>
-		<p>Projects: <?=$more['projects']?></p>
-		<p>Starred: <?=$more['starred']?></p>
-		<p>Photographer: <?=$more['photographer']?></p>
-		<p>Created: <?=Time::display($more['created'],'Y-m-d G:i')?></p>
-		<p>Modified: <?=Time::display($more['modified'],'Y-m-d G:i')?></p>
-		<p>Notes: <?=$more['notes']?></p>
+</table>
 
-
-
+</div>
+<br>
 <a href="/file/">Back</a>

@@ -71,6 +71,7 @@
 	<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
   	<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
   	<script src="/js/bootstrap.min.js"></script>
+  	<script src="/js/jquery-ui-1.10.3.custom.min.js"></script>
   	<script type="text/javascript" language="javascript" src="/js/p4.js"></script>
 </body>
 </html>

@@ -24,7 +24,8 @@
 			<!--	Submit New Post	-->
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-default" title="Add Project">Add Project</button>
+					<button type="submit" class="btn btn-default" title="Add project, files 
+					can be added on next page">Add Project</button>
 				</div>
 			</div>
 		</form>

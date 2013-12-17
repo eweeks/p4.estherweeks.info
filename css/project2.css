@@ -121,5 +121,17 @@ table.dataTable tr.odd {
 
 /*Orange border on table th*/
 table.dataTable thead th {
-    border-bottom: 2px solid #C98000;
+	border-bottom: 2px solid #C98000;
+   	font-weight: lighter;
+}
+
+/*Classes */
+
+.orange{
+	color: #c98000;
+	
+}
+
+.dataTables_wrapper {
+    width: 38%;
 }

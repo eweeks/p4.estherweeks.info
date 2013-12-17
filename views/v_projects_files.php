@@ -17,11 +17,20 @@
 
 
 <?php foreach($files as $file): ?>
+	
+		<?php if(in_array($file['file_id'], $t)){?>
+			<tr><td><?=$file['name']?></td> <td><?=$file['date_start']?></td>  <td><?=$file['camera']?></td>
+	 		<td><?=$file['number']?></td> <td><?=$file['format']?></td> <td><?=$file['tags']?></td>
+			<td class="orange">Already Added</td></tr>
 
-<tr><td><?=$file['name']?></td> <td><?=$file['date_start']?></td>  <td><?=$file['camera']?></td>
-	 <td><?=$file['number']?></td> <td><?=$file['format']?></td> <td><?=$file['tags']?></td>
-	<td><a href='/projects/f_add/<?=$file['file_id']?>' title="More Info">Add File</a></td></tr>
-	<?php endforeach; ?>
+		<?php }else{?>
+			<tr><td><?=$file['name']?></td> <td><?=$file['date_start']?></td>  <td><?=$file['camera']?></td>
+	 	<td><?=$file['number']?></td> <td><?=$file['format']?></td> <td><?=$file['tags']?></td>
+		<td><a href='/projects/f_add/<?=$file['file_id']?>' title="More Info">Add File</a></td></tr>
+		<?php }?>
+
+		
+<?php endforeach; ?>
 	
 					</tbody>
 				</table>
