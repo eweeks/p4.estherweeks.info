@@ -112,7 +112,26 @@ class file_controller extends base_controller {
 		# Render the view
 		echo $this->template;
 	
-	}	
+	}
+	
+	public function edit($file_id){
+		# Set up the View
+		$this->template->content = View::instance('v_file_edit');
+		
+		# Query
+		$q = 'SELECT * FROM files WHERE file_id = ';
+		
+		
+		DB::instance(DB_NAME)->select_row($q.$file_id);
+		
+		$present = DB::instance(DB_NAME)->select_row($q.$file_id);
+		
+		# Pass data to the View
+		$this->template->content->present = $present;
+		
+		# Render the view
+		echo $this->template;
+	}
 
 	
 } # End of class

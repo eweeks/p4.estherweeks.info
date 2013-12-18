@@ -95,58 +95,7 @@ class users_controller extends base_controller {
 		# Send them back to the main index.
 		Router::redirect("/");
 	}
-/*-------------------------------------------------------------------------------------------------
-		Profile Function for User
--------------------------------------------------------------------------------------------------*/
-	public function profile() {
-		# If user is blank, they're not logged in; redirect them to the login page
-		if(!$this->user) {
-			Router::redirect('/users/login');
-		}
-		
-		# If they weren't redirected away, continue:
-		
-		# Setup view
-		$this->template->content = View::instance('v_users_profile');
-		$this->template->title   = "Profile of ".$this->user->first_name;
 
-		# Pass data (profile) to the view
-		$this->template->content->profile = $profile;
-
-		# Render template
-		echo $this->template;
-	}
-/*-------------------------------------------------------------------------------------------------
-		Edit Profile function for Users
--------------------------------------------------------------------------------------------------*/
-	public function profileedit($error = NULL){
-		$this->template->content = View::instance('v_users_profileedit');
-		$this->template->title   = "Edit Profile";
-
-		#error
-		$this->template->content->error = $error;
-
-		# Render template
-		echo $this->template;
-	}
-/*-------------------------------------------------------------------------------------------------
-		p_profile function for Users	**Checks for errors, updates profile
--------------------------------------------------------------------------------------------------*/
-	public function p_profile( ){
-		foreach($_POST as $key => $value) { 
-			#if blank, error
-			if((empty($value)) || (!$value) || (trim($value) == "") ){
-				Router::redirect("/users/profileedit/error");
-			}
-		}
-		
-		$where_condition = 'WHERE user_id = '.$this->user->user_id;
-		
-		#update user table
-		DB::instance(DB_NAME)->update("users", $_POST, 'WHERE user_id = '.$this->user->user_id);
-		Router::redirect("/users/profile");
-
-	}
 /*-------------------------------------------------------------------------------------------------
 		Reset Password Function for Users
 -------------------------------------------------------------------------------------------------*/
