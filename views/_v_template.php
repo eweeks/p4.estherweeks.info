@@ -50,12 +50,13 @@
 				</ul>
 			</li>               
             
-			<li><a href='/users/logout'>Logout</a></li>            
-
+			<li><a href='/users/logout'>Logout</a></li>
+		 <?php if($user->first_name == "admin"): ?>
+			<li><a href='/admin'>Admin</a></li>
+		<?php endif; ?><!--for admin-->
+		
         <!-- Menu options for users who are not logged in -->
         <?php else: ?>
-
-            <li><a href='/users/signup'>Sign up</a></li>
             <li><a href='/users/login'>Log in</a></li>
 
         <?php endif; ?>

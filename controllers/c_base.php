@@ -2,6 +2,7 @@
 
 class base_controller {
 	
+	public $admin;
 	public $user;
 	public $userObj;
 	public $template;
@@ -24,6 +25,7 @@ class base_controller {
 								
 		# So we can use $user in views			
 			$this->template->set_global('user', $this->user);
+
 			
 	}
 	
