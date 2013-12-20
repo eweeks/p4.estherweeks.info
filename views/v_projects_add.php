@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-12 col-sm-12">
 		<h2 >Add a Project</h2>
-		<form method='POST' action='/projects/p_add' class="form-horizontal" role="form">
+		<form method='POST' action='/projects/p_add' class="form-horizontal" role="form" id="projects_add">
 			<!--	New File Input	-->
 			<div class="form-group">
 				<p>Enter info for a new project here</p>
@@ -9,15 +9,17 @@
 					<label class="col-sm-2 control-label">Enter Name</label>
 					<div class="col-sm-6">
 						<input type="text" class="form-control" id="project_name" placeholder="Project Name" 
-						name='project_name' title="Project Name">
+						name='project_name' maxlength="18">
 					</div>
+					<div class="status"></div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Enter Description</label>
 					<div class="col-sm-6">
 						<input type="text" class="form-control" id="project_description" placeholder="Project Description" 
-						name='project_description' title="Project Description">
+						name='project_description' maxlength="26">
 					</div>
+					<div class="status"></div>
 				</div>
 
 			</div>

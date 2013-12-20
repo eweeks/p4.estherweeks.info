@@ -6,6 +6,7 @@
 		<form method='POST' action='/file/f_edit/<?=$present['file_id']?>' class="form-horizontal" role="form" id="file_form">
 			<!--	New File Input	-->
 				<p>Enter info for file here</p>
+				<p></p>
 			
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Enter Number</label>

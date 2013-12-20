@@ -4,9 +4,9 @@
 		<form method='POST' action='/file/f_add' class="form-horizontal" role="form" id="file_form">
 			<!--	New File Input	-->
 				<p>Enter info for a new file here</p>
-			
+				<p class="orange"><span class="glyphicon glyphicon-check"></span> marks required fields</p>
 			<div class="form-group">
-				<label class="col-sm-2 control-label">Enter Number</label>
+				<label class="col-sm-2 control-label"> <span class="glyphicon glyphicon-check"></span> Enter Number</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="number" placeholder="Number" 
 					name='number' maxlength="20">
@@ -15,7 +15,7 @@
 			</div>
 			
 			<div class="form-group">
-				<label class="col-sm-2 control-label">Enter Name</label>
+				<label class="col-sm-2 control-label"><span class="glyphicon glyphicon-check"></span> Enter Name</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="name" placeholder="Name" 
 					name='name' maxlength="20">
@@ -24,7 +24,7 @@
 			</div>
 			
 			<div class="form-group">
-				<label class="col-sm-2 control-label">Enter Start Date</label>
+				<label class="col-sm-2 control-label"><span class="glyphicon glyphicon-check"></span> Enter Start Date</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control datepicker" id="date_start" 
 					placeholder="Date-Start" name='date_start' maxlength="10">
@@ -41,7 +41,7 @@
 				<div class="status"></div>
 			</div>
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="Scanned">Photographer</label>
+				<label class="col-sm-2 control-label" for="Scanned"><span class="glyphicon glyphicon-check"></span> Photographer</label>
 				<select name="scanned" id="scanned" title="Choose the Photographer">
 					<option>Carl Calhoun</option>
 					<option>Esther Weeks</option>
@@ -49,7 +49,7 @@
 			</div>
 			<div class="form-group">
 				<br>
-				<label class="col-sm-2 control-label" for="iso">Choose Format</label>
+				<label class="col-sm-2 control-label" for="iso"><span class="glyphicon glyphicon-check"></span> Choose Format</label>
 				<select name="format" id="format" title="Select the Film Format of Images">
 					<option>135</option>
 					<option>120 6x4.5</option>
@@ -62,7 +62,7 @@
 			</div>
 			<div class="form-group">
 				<br>				
-				<label class="col-sm-2 control-label" for="iso">Choose Film Base</label>
+				<label class="col-sm-2 control-label" for="iso"><span class="glyphicon glyphicon-check"></span> Choose Film Base</label>
 				<select name="film_base" id="film_base" title="Select the Film Base Used">
 					<option>RXP-Provia 400X</option>
 					<option>RVP100-Velvia 100</option>
@@ -78,7 +78,7 @@
 			</div>
 			<div class="form-group">
 				<br>		
-				<label class="col-sm-2 control-label" for="iso">Choose Camera</label>
+				<label class="col-sm-2 control-label" for="iso"><span class="glyphicon glyphicon-check"></span> Choose Camera</label>
 				<select name="camera" id="camera" title="Select Camera Used">
 					<option>EOS-3</option>
 					<option>EOS-1</option>
@@ -96,7 +96,7 @@
 			</div>
 			<div class="form-group">
 				<br>
-				<label class="col-sm-2 control-label" for="iso">Choose ISO</label>
+				<label class="col-sm-2 control-label" for="iso"><span class="glyphicon glyphicon-check"></span> Choose ISO</label>
 				<select name="iso" id="iso" title="Select ISO Used">
 					<option>50</option>
 					<option>80</option>
@@ -113,7 +113,7 @@
 			</div>
 			<div class="form-group">
 				<br>
-				<label class="col-sm-2 control-label" for="color">Color</label>
+				<label class="col-sm-2 control-label" for="color"><span class="glyphicon glyphicon-check"></span> Color</label>
 				<select name="color" id="color" title="Select if Color, Black and White, or Infrared">
 					<option>Color</option>
 					<option>Black & White</option>
@@ -122,7 +122,7 @@
 			</div>
 			<div class="form-group">
 				<br>
-				<label class="col-sm-2 control-label" for="pos_neg">Positive or Negative</label>
+				<label class="col-sm-2 control-label" for="pos_neg"><span class="glyphicon glyphicon-check"></span> Positive or Negative</label>
 				<select name="pos_neg" id="pos_neg" title="Select if Files are Positive or Negative">
 					<option>Positive</option>
 					<option>Negative</option>
@@ -139,7 +139,7 @@
 			</div>
 			
 			<div class="form-group">
-				<label class="col-sm-2 control-label">Enter tags</label>
+				<label class="col-sm-2 control-label"><span class="glyphicon glyphicon-check"></span> Enter tags</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="tags" placeholder="Tags" 
 					name='tags'>
@@ -147,7 +147,7 @@
 				<div class="status"></div>
 			</div>
 			<div class="form-group">
-				<label class="col-sm-2 control-label">Enter Where Stored</label>
+				<label class="col-sm-2 control-label"><span class="glyphicon glyphicon-check"></span> Enter Where Stored</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="stored" placeholder="Stored" 
 					name='stored'>
@@ -155,7 +155,7 @@
 				<div class="status"></div>
 			</div>
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="Scanned">Scanned?</label>
+				<label class="col-sm-2 control-label" for="Scanned"><span class="glyphicon glyphicon-check"></span> Scanned?</label>
 				<select name="scanned" id="scanned" title="Has the File Been Scanned?">
 					<option>No</option>
 					<option>Yes</option>
@@ -178,7 +178,7 @@
 				</div>		
 			</div>
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="Starred">Starred?</label>
+				<label class="col-sm-2 control-label" for="Starred"><span class="glyphicon glyphicon-check"></span> Starred?</label>
 				<select name="starred" id="starred" title="Star Image to Mark as Important">
 					<option>No</option>
 					<option>Yes</option>
