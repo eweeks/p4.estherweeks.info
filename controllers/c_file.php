@@ -132,6 +132,49 @@ class file_controller extends base_controller {
 		# Render the view
 		echo $this->template;
 	}
+	
+	public function f_edit($file_id){
+	# Setup view
+		$this->template->content = View::instance('v_file_edited');
+		$this->template->title   = "File Updated";
 
+		foreach($_POST as $key => $value){
+				//print_r($_POST);
+				if($key=="number" || $key=="name" ||
+					$key=="date_start" || $key=="tags" ||
+					$key=="stored"){
+					if((empty($value)) || (!$value) || (trim($value) == "") ){
+					# Send them back to the login page
+					Router::redirect("/file/edit/error");
+					}
+			}
+		}
+		
+
+		# Unix timestamp of when this files was modified
+		$_POST['modified'] = Time::now();
+
+		# updates datebase
+		DB::instance(DB_NAME)->update("files", $_POST, 'WHERE file_id = '.$file_id);
+
+		# Render template
+		echo $this->template;
+
+		
+	}
+
+	public function delete($file_id){ 
+		# Setup view
+		$this->template->content = View::instance('v_file_deleted');
+		$this->template->title   = "File Deleted";
+		
+		$where_condition = 'WHERE file_id = '.$file_id;
+		DB::instance(DB_NAME)->delete('files', $where_condition);
+		
+		# Render template
+		echo $this->template;
+	
+	}
+	
 	
 } # End of class

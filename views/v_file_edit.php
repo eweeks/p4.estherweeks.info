@@ -3,7 +3,7 @@
 <div class="row">
 	<div class="col-md-12 col-sm-12">
 		<h2 >Add a File</h2>
-		<form method='POST' action='/file/f_add' class="form-horizontal" role="form" id="file_form">
+		<form method='POST' action='/file/f_edit/<?=$present['file_id']?>' class="form-horizontal" role="form" id="file_form">
 			<!--	New File Input	-->
 				<p>Enter info for file here</p>
 			
@@ -136,7 +136,7 @@
 				<label class="col-sm-2 control-label">Push</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="push" placeholder="Push" 
-					name='push' title="Enter Any Push Processing" maxlength="10" >
+					name='push' title="Enter Any Push Processing" maxlength="10" value="<?=$present['push']?>" >
 				</div>
 				<div class="status"></div>
 			</div>
@@ -145,7 +145,7 @@
 				<label class="col-sm-2 control-label">Enter tags</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="tags" placeholder="Tags" 
-					name='tags'>
+					name='tags' value="<?=$present['tags']?>">
 				</div>
 				<div class="status"></div>
 			</div>
@@ -153,7 +153,7 @@
 				<label class="col-sm-2 control-label">Enter Where Stored</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="stored" placeholder="Stored" 
-					name='stored'>
+					name='stored' value="<?=$present['stored']?>">
 				</div>
 				<div class="status"></div>
 			</div>
@@ -169,7 +169,7 @@
 				<label class="col-sm-2 control-label">Any projects used in</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="projects" placeholder="Projects" 
-					name='projects' title="Projects File is Used in">
+					name='projects' title="Projects File is Used in" value="<?=$present['projects']?>">
 				</div>
 			</div>
 			<div class="form-group">
@@ -177,7 +177,7 @@
 				<label class="col-sm-2 control-label">Notes</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="notes" placeholder="Notes" 
-					name='notes' title="Anything Else Relevant">
+					name='notes' title="Anything Else Relevant" value="<?=$present['notes']?>">
 				</div>		
 			</div>
 			<div class="form-group">
@@ -190,7 +190,7 @@
 			<!--	Submit New Post	-->
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-default" title="Add File">Add File</button>
+					<button type="submit" class="btn btn-default" title="Update File">Update File</button>
 				</div>
 			</div>
 		</form>

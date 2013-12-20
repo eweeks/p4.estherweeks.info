@@ -256,8 +256,35 @@ ON files.file_id = files_projects.file_id
 
 	}
 	
+		public function delete($project_id){ 
+		# Setup view
+		$this->template->content = View::instance('v_projects_deleted');
+		$this->template->title   = "Project Deleted";
+		
+		#Deletes project from project table
+		$where_condition = 'WHERE project_id = '.$project_id;
+		DB::instance(DB_NAME)->delete('projects', $where_condition);
+		
+		#Deletes any items on files_projects linked to this project
+		$where_two = 'WHERE project_id = '.$project_id;
+		DB::instance(DB_NAME)->delete('files_projects', $where_two);
+		
+		
+		# Render template
+		echo $this->template;
 	
+	}
 	
+	public function f_delete($file_id, $project_id){ 
+		# Delete this connection
+		$where_condition = 'WHERE file_id = '.$file_id.' AND project_id = '.$project_id;
+		DB::instance(DB_NAME)->delete('files_projects', $where_condition);
+
+
+
+		# Send them back
+		Router::redirect("/projects/view/".$project_id);
 	
+	}
 	
 } # End of class

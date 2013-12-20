@@ -1,8 +1,8 @@
-h1{
-	padding:0;
-	margin:0;
-	border:0;
 
+h1 {
+    border-bottom: 1px solid #c98000;
+    margin: 1px;
+    padding-bottom: 0.5em;
 }
 
 a {
@@ -29,11 +29,6 @@ p{
 	font-size: 1.5em;
 	font-weight: 300;
 	padding-left: 1em;
-}
-
-time{
-	font-size: .5em;
-  	font-style: italic;
 }
 
 img{
@@ -134,4 +129,13 @@ table.dataTable thead th {
 
 .dataTables_wrapper {
     width: 38%;
+}
+
+.time {
+    font-size: 1.1em;
+    font-style: italic;
+}
+
+.view{
+    font-size: 0.8em;
 }
