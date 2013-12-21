@@ -3,7 +3,6 @@
 <!-- Prints our project info for this project-->
 <?php foreach($name as $row): ?>	
 	<h2><?=$row['project_name']?>:</h2> 
-	<p><?=$row['project_id']?>:</p>
 	<p>Description:<?=$row['project_description']?></p>
 <?php endforeach; ?>
 
@@ -16,10 +15,9 @@
 		<p>File Number:<?=$project['number']?></p>
 		<p>Stored:<?=$project['stored']?></p>
 		<p>Date of file:<?=$project['date_start']?> </p>
-		<br><br>
+		<a href='/projects/f_delete/<?=$project['file_id']?>/<?=$row['project_id']?>'  title="Delete File">Delete File</a>
 	</article>
-	
-	<a href='/projects/f_delete/<?=$project['file_id']?>/<?=$row['project_id']?>'  title="Delete File">Delete File</a>
+	<br><br>
 <?php endforeach; ?>
 <br>
-<a href="/projects/files" title="Add Projects">Add Files </a>
+<a href="/projects/files" title="Add Files">Add Files </a>

@@ -18,10 +18,10 @@ $(document).ready(function() {
 	//sizing for column one on file_more table
 		$('#more').dataTable( {
        "aoColumns": [ 
-         { "sWidth": "15%" },
+         { "sWidth": "40%" },
          null,
        ],
-       "iDisplayLength": 25,
+       "iDisplayLength": 30,
        
      } );
 	

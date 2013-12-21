@@ -40,12 +40,11 @@ p{
 	padding-left: 1em;
 }
 
-img{
-	margin:0;
-	padding:0;
-	border:0;
-}
 
+button, select option:first-child{
+	color: #227930;
+	font-weight: bold;
+}
 /*Id's */
 
 #logo{
@@ -117,7 +116,6 @@ table.dataTable thead th {
 .navbar-inverse {
     background-color: #222222;
     border-bottom: 6px solid #227930;
-    /*border-color: purple;*/
 }
 
 
@@ -137,4 +135,8 @@ table.dataTable thead th {
 
 .navbar-inverse .navbar-nav > li > a {
     color: #CACACA;
+}
+
+.row #formcss{
+    margin: 1em;
 }

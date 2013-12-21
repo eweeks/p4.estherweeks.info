@@ -20,7 +20,7 @@
 				<label class="col-sm-2 control-label"><span class="glyphicon glyphicon-check"></span> Enter Name</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="name" placeholder="Name" 
-					name='name' maxlength="20">
+					name='name' maxlength="35">
 				</div>	
 				<div class="status"></div>
 			</div>
@@ -44,9 +44,9 @@
 			</div>
 			<!--Photographer-->
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="Scanned"><span class="glyphicon glyphicon-check"></span> 
+				<label class="col-sm-2 control-label" for="photographer"><span class="glyphicon glyphicon-check"></span> 
 					Photographer</label>
-				<select name="scanned" id="scanned" title="Choose the Photographer">
+				<select name="photographer" id="photographer" title="Choose the Photographer">
 					<option>Carl Calhoun</option>
 					<option>Esther Weeks</option>
 				</select>
@@ -62,7 +62,7 @@
 					<option>120 6x6</option>
 					<option>120 6x7</option>
 					<option>120 6x9</option>
-					<option>Polaroid</option>
+					<option>2 1/4 x 3 1/4</option>
 					<option>Digital</option>
 				</select>
 			</div>

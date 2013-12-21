@@ -20,7 +20,7 @@
 					<label class="col-sm-2 control-label">Enter Description</label>
 					<div class="col-sm-6">
 						<input type="text" class="form-control" id="project_description" placeholder="Project Description" 
-						name='project_description' maxlength="26">
+						name='project_description' maxlength="35">
 					</div>
 					<div class="status"></div>
 				</div>
@@ -29,8 +29,8 @@
 			<!--Submit New Project-->
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-default" title="Add project, files 
-					can be added on next page">Add Project</button>
+					<button type="submit" class="btn btn-default" title="Add project, files can be added on next page">
+						Add Project</button>
 				</div>
 			</div>
 		</form>

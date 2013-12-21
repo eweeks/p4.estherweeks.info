@@ -5,7 +5,7 @@
 		<thead>
 			<tr>
 				<th>Category</th>
-				<th>File Info</th>
+				<th>File Info for File: <?=$more['name']?></th>
 			</tr>
 		</thead>
 		<tbody>

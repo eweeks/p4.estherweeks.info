@@ -83,11 +83,11 @@ Validator for adding a new project
 		rules: {
 			project_name: {
 				required: true,
-				maxlength: 16
+				maxlength: 32
 			},
 			project_description: {
 				required: true,
-				maxlength: 25
+				maxlength: 32
 			}
 		
 		},
@@ -97,7 +97,7 @@ Validator for adding a new project
 				rangelength: jQuery.format("Enter no more than {0} characters")
 			},
 			project_description: {
-				required: "Provide a Project Descripion ",
+				required: "Provide a Project Description ",
 				rangelength: jQuery.format("Enter no more than {0} characters")
 			}
 		},

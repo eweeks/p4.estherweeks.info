@@ -1,15 +1,17 @@
 <p>Edit Page for Files</p>
 
-<div class="row">
+<div class="row" id="formcss">
 	<div class="col-md-12 col-sm-12">
-		<h2 >Add a File</h2>
+		<h2 >Edit File</h2>
 		<form method='POST' action='/file/f_edit/<?=$present['file_id']?>' class="form-horizontal" role="form" id="file_form">
 			<!--	New File Input	-->
 			<p>Enter info for file here</p>
+			<p>Note: Current file information is filled in. </p>
+			<p class="orange"><span class="glyphicon glyphicon-check"></span> marks required fields</p>
 			
 			<!--Number-->
 			<div class="form-group">
-				<label class="col-sm-2 control-label">Enter Number</label>
+				<label class="col-sm-2 control-label"> <span class="glyphicon glyphicon-check"></span> Enter Number</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="number" placeholder="Number" 
 					name='number' maxlength="20" value="<?=$present['number']?>">
@@ -19,17 +21,17 @@
 			
 			<!--Enter Name-->
 			<div class="form-group">
-				<label class="col-sm-2 control-label">Enter Name</label>
+				<label class="col-sm-2 control-label"> <span class="glyphicon glyphicon-check"></span> Enter Name</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="name" placeholder="Name" 
-					name='name' maxlength="20" value="<?=$present['name']?>">
+					name='name' maxlength="35" value="<?=$present['name']?>">
 				</div>	
 				<div class="status"></div>
 			</div>
 			
 			<!--Start Date-->
 			<div class="form-group">
-				<label class="col-sm-2 control-label">Enter Start Date</label>
+				<label class="col-sm-2 control-label"> <span class="glyphicon glyphicon-check"></span> Enter Start Date</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control datepicker" id="date_start" 
 					placeholder="Date-Start" name='date_start' maxlength="10" value="<?=$present['date_start']?>">
@@ -50,8 +52,9 @@
 			
 			<!--Photographer-->
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="Scanned">Photographer</label>
-				<select name="scanned" id="scanned" title="Choose the Photographer">
+				<label class="col-sm-2 control-label" for="photographer"> <span class="glyphicon glyphicon-check"></span> Photographer</label>
+				<select name="photographer" id="photographer" title="Choose the Photographer">
+					<option selected="Selected" class="selected"><?=$present['photographer']?></option>
 					<option>Carl Calhoun</option>
 					<option>Esther Weeks</option>
 				</select>
@@ -60,14 +63,15 @@
 			<!--Choose Format-->
 			<div class="form-group">
 				<br>
-				<label class="col-sm-2 control-label" for="iso">Choose Format</label>
+				<label class="col-sm-2 control-label" for="iso"> <span class="glyphicon glyphicon-check"></span> Choose Format</label>
 				<select name="format" id="format" title="Select the Film Format of Images">
-					<option>135</option>
+					<option selected="Selected" class="selected"><?=$present['format']?></option>
+					<option >135</option>
 					<option>120 6x4.5</option>
 					<option>120 6x6</option>
 					<option>120 6x7</option>
 					<option>120 6x9</option>
-					<option>Polaroid</option>
+					<option>2 1/4 x 3 1/4</option>
 					<option>Digital</option>
 				</select>
 			</div>
@@ -75,8 +79,9 @@
 			<!--Film Base-->
 			<div class="form-group">
 				<br>				
-				<label class="col-sm-2 control-label" for="iso">Choose Film Base</label>
+				<label class="col-sm-2 control-label" for="iso"> <span class="glyphicon glyphicon-check"></span> Choose Film Base</label>
 				<select name="film_base" id="film_base" title="Select the Film Base Used">
+					<option selected="Selected"><?=$present['film_base']?></option>
 					<option>RXP-Provia 400X</option>
 					<option>RVP100-Velvia 100</option>
 					<option>RVP100F - Velvia 100F</option>
@@ -93,8 +98,9 @@
 			<!--Camera-->
 			<div class="form-group">
 				<br>
-				<label class="col-sm-2 control-label" for="iso">Choose Camera</label>
+				<label class="col-sm-2 control-label" for="iso"> <span class="glyphicon glyphicon-check"></span> Choose Camera</label>
 				<select name="camera" id="camera" title="Select Camera Used">
+					<option selected="Selected"><?=$present['camera']?></option>
 					<option>EOS-3</option>
 					<option>EOS-1</option>
 					<option>AE-1</option>
@@ -113,8 +119,9 @@
 			<!--Choose ISO-->
 			<div class="form-group">
 				<br>
-				<label class="col-sm-2 control-label" for="iso">Choose ISO</label>
+				<label class="col-sm-2 control-label" for="iso"> <span class="glyphicon glyphicon-check"></span> Choose ISO</label>
 				<select name="iso" id="iso" title="Select ISO Used">
+					<option selected="Selected"><?=$present['iso']?></option>
 					<option>50</option>
 					<option>80</option>
 					<option>100</option>
@@ -132,8 +139,9 @@
 			<!--Color-->
 			<div class="form-group">
 				<br>
-				<label class="col-sm-2 control-label" for="color">Color</label>
+				<label class="col-sm-2 control-label" for="color"> <span class="glyphicon glyphicon-check"></span> Color</label>
 				<select name="color" id="color" title="Select if Color, Black and White, or Infrared">
+					<option selected="Selected"><?=$present['color']?></option>
 					<option>Color</option>
 					<option>Black & White</option>
 					<option>Infrared</option>
@@ -143,8 +151,9 @@
 			<!--Pos or Neg-->
 			<div class="form-group">
 				<br>
-				<label class="col-sm-2 control-label" for="pos_neg">Positive or Negative</label>
+				<label class="col-sm-2 control-label" for="pos_neg"> <span class="glyphicon glyphicon-check"></span> Positive or Negative</label>
 				<select name="pos_neg" id="pos_neg" title="Select if Files are Positive or Negative">
+					<option selected="Selected"><?=$present['pos_neg']?></option>
 					<option>Positive</option>
 					<option>Negative</option>
 				</select>
@@ -163,7 +172,7 @@
 			
 			<!--Tags-->
 			<div class="form-group">
-				<label class="col-sm-2 control-label">Enter tags</label>
+				<label class="col-sm-2 control-label"> <span class="glyphicon glyphicon-check"></span> Enter tags</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="tags" placeholder="Tags" 
 					name='tags' value="<?=$present['tags']?>">
@@ -173,7 +182,7 @@
 			
 			<!--Stored-->
 			<div class="form-group">
-				<label class="col-sm-2 control-label">Enter Where Stored</label>
+				<label class="col-sm-2 control-label"> <span class="glyphicon glyphicon-check"></span> Enter Where Stored</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="stored" placeholder="Stored" 
 					name='stored' value="<?=$present['stored']?>">
@@ -183,8 +192,9 @@
 			
 			<!--Scanned-->
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="Scanned">Scanned?</label>
+				<label class="col-sm-2 control-label" for="Scanned"> <span class="glyphicon glyphicon-check"></span> Scanned?</label>
 				<select name="scanned" id="scanned" title="Has the File Been Scanned?">
+					<option selected="Selected"><?=$present['scanned']?></option>
 					<option>No</option>
 					<option>Yes</option>
 				</select>
@@ -212,8 +222,9 @@
 			
 			<!--Starred-->
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="Starred">Starred?</label>
+				<label class="col-sm-2 control-label" for="Starred"> <span class="glyphicon glyphicon-check"></span> Starred?</label>
 				<select name="starred" id="starred" title="Star Image to Mark as Important">
+					<option selected="Selected"><?=$present['starred']?></option>
 					<option>No</option>
 					<option>Yes</option>
 				</select>
