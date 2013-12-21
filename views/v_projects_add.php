@@ -5,6 +5,8 @@
 			<!--	New File Input	-->
 			<div class="form-group">
 				<p>Enter info for a new project here</p>
+				
+				<!--Project Name-->
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Enter Name</label>
 					<div class="col-sm-6">
@@ -13,6 +15,7 @@
 					</div>
 					<div class="status"></div>
 				</div>
+				<!--Description-->
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Enter Description</label>
 					<div class="col-sm-6">
@@ -23,7 +26,7 @@
 				</div>
 
 			</div>
-			<!--	Submit New Post	-->
+			<!--Submit New Project-->
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
 					<button type="submit" class="btn btn-default" title="Add project, files 

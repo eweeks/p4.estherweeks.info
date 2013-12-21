@@ -1,4 +1,2 @@
-<p>
-	Hello World! Project 4 homepage -Photo File
-</p>
+<p>Project 4- Photo File</p>
 

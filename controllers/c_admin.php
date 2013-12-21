@@ -2,33 +2,35 @@
 
 class admin_controller extends base_controller {
 	
-	/*-------------------------------------------------------------------------------------------------
+/*-------------------------------------------------------------------------------------------------
 
-	-------------------------------------------------------------------------------------------------*/
+-------------------------------------------------------------------------------------------------*/
 	public function __construct() {
 		parent::__construct();
 		
-	} 
+	}
 		
-	/*-------------------------------------------------------------------------------------------------
+/*-------------------------------------------------------------------------------------------------
 	Index for Admin
-	-------------------------------------------------------------------------------------------------*/
+-------------------------------------------------------------------------------------------------*/
 	public function index() {	
 		# Make sure user is admin
 		if($this->user->first_name != "admin") {
 			Router::redirect("/admin/noaccess");
 		}
 	
-		
 		# Setup view
 		$this->template->content = View::instance('v_admin');
 		$this->template->title   = "Admin";
 			
 		# Render template
 		echo $this->template;
-
+		
 	} # End of method
 	
+/*-------------------------------------------------------------------------------------------------
+	noaccess for Admin - restricts view, displays no access view
+-------------------------------------------------------------------------------------------------*/	
 	
 	public function noaccess(){
 		# Setup view
@@ -37,14 +39,12 @@ class admin_controller extends base_controller {
 
 		# Render template
 		echo $this->template;
-	
 	}
 	
 /*-------------------------------------------------------------------------------------------------
-		Signup Function for Users
+		Admin Signup Function for Users
 -------------------------------------------------------------------------------------------------*/
 	public function signup($error = NULL) {
-		
 		# Setup view
 		$this->template->content = View::instance('v_admin_signup');
 		$this->template->title   = "Sign Up";

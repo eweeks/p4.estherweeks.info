@@ -1,9 +1,8 @@
 
 $(document).ready(function() {
+	//js for dataTable 
 	$('#example').dataTable( {
-		//"bProcessing": true,
-		//"bServerSide": true,
-		//"sAjaxSource": "../examples_support/server_processing.php"
+
 	} );
 	
 		//Date Picker
@@ -12,9 +11,6 @@ $(document).ready(function() {
 			changeYear: true
 		});
 
-	
-	//Tooltip
-		// $( document ).tooltip();
 		 
 	//making datepicker draggable
 	$(".ui-datepicker").draggable();	

@@ -13,10 +13,8 @@ class file_controller extends base_controller {
 
 /*-------------------------------------------------------------------------------------------------
 		Index Function for File
--------------------------------------------------------------------------------------------------*/	
-	
+-------------------------------------------------------------------------------------------------*/
 	public function index() {
-	
 		# Set up the View
 		$this->template->content = View::instance('v_file_index');
 		$this->template->title   = "File";
@@ -32,15 +30,11 @@ class file_controller extends base_controller {
 		$this->template->content->files = $files;
 		
 		# Render the view
-		echo $this->template;	
-
-	
+		echo $this->template;
 	}
 	
-	
-	
 /*-------------------------------------------------------------------------------------------------
-		Add Function for Files - redirects to v_file_add page
+		Add Function for Files 
 -------------------------------------------------------------------------------------------------*/
 	public function add($error = NULL) {
 
@@ -71,8 +65,8 @@ class file_controller extends base_controller {
 					$key=="date_start" || $key=="tags" ||
 					$key=="stored"){
 					if((empty($value)) || (!$value) || (trim($value) == "") ){
-					# Send them back to the login page
-					Router::redirect("/file/add/error");
+						# Send them back to the login page
+						Router::redirect("/file/add/error");
 					}
 			}
 		}
@@ -100,15 +94,13 @@ class file_controller extends base_controller {
 		
 		# Query
 		$q = 'SELECT * FROM files WHERE file_id = ';
-		
-		
 		DB::instance(DB_NAME)->select_row($q.$file_id);
-		 
-		 $more = DB::instance(DB_NAME)->select_row($q.$file_id);
-		# Send them to more
-		//Router::redirect("/file/more");
+		#Saves query as variable
+		$more = DB::instance(DB_NAME)->select_row($q.$file_id);
+		
 		# Pass data to the View
 		$this->template->content->more = $more;
+		
 		# Render the view
 		echo $this->template;
 	
@@ -120,10 +112,7 @@ class file_controller extends base_controller {
 		
 		# Query
 		$q = 'SELECT * FROM files WHERE file_id = ';
-		
-		
 		DB::instance(DB_NAME)->select_row($q.$file_id);
-		
 		$present = DB::instance(DB_NAME)->select_row($q.$file_id);
 		
 		# Pass data to the View
@@ -134,23 +123,23 @@ class file_controller extends base_controller {
 	}
 	
 	public function f_edit($file_id){
-	# Setup view
+		# Setup view
 		$this->template->content = View::instance('v_file_edited');
 		$this->template->title   = "File Updated";
 
+		#Checks that required fields are filled out
 		foreach($_POST as $key => $value){
-				//print_r($_POST);
-				if($key=="number" || $key=="name" ||
-					$key=="date_start" || $key=="tags" ||
-					$key=="stored"){
-					if((empty($value)) || (!$value) || (trim($value) == "") ){
+			//print_r($_POST);
+			if($key=="number" || $key=="name" ||
+				$key=="date_start" || $key=="tags" ||
+				$key=="stored"){
+				if((empty($value)) || (!$value) || (trim($value) == "") ){
 					# Send them back to the login page
 					Router::redirect("/file/edit/error");
-					}
+				}
 			}
 		}
 		
-
 		# Unix timestamp of when this files was modified
 		$_POST['modified'] = Time::now();
 
@@ -159,8 +148,6 @@ class file_controller extends base_controller {
 
 		# Render template
 		echo $this->template;
-
-		
 	}
 
 	public function delete($file_id){ 
@@ -175,6 +162,5 @@ class file_controller extends base_controller {
 		echo $this->template;
 	
 	}
-	
 	
 } # End of class

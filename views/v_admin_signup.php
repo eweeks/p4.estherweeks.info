@@ -7,7 +7,8 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label">First Name</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="inputFirstName" placeholder="FirstName" name='first_name' title="First Name" >
+					<input type="text" class="form-control" id="inputFirstName" placeholder="FirstName"
+					name='first_name' title="First Name" >
 				</div>
 			</div>
 			
@@ -15,7 +16,8 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Last Name</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="LastName" placeholder="LastName" name='last_name' title="Last Name">
+					<input type="text" class="form-control" id="LastName" placeholder="LastName" name='last_name'
+					title="Last Name">
 				</div>
 			</div>
 			
@@ -31,7 +33,8 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Password</label>
 				<div class="col-sm-10">
-					<input type="password" class="form-control" id="Password" placeholder="Password" name='password' title="Password">
+					<input type="password" class="form-control" id="Password" placeholder="Password" name='password'
+					title="Password">
 				</div>
 			</div>
 			

@@ -13,11 +13,9 @@ class users_controller extends base_controller {
 		if(!$this->user) {
 			Router::redirect('/users/login');
 		}else{
-			Router::redirect('/users/profile');
-			
+			Router::redirect('/users/profile');	
 		}
 	}
-	
 
 /*-------------------------------------------------------------------------------------------------
 		Login Function for Users
@@ -61,15 +59,6 @@ class users_controller extends base_controller {
 
 		# But if we did, login succeeded! 
 		} else {
-		
-		/*  Store this token in a cookie using setcookie()
-		Important Note: *Nothing* else can echo to the page before setcookie is called
-		Not even one single white space.
-		param 1 = name of the cookie
-		param 2 = the value of the cookie
-		param 3 = when to expire
-		param 4 = the path of the cooke (a single forward slash sets it for the entire domain)
-		*/
 			setcookie("token", $token, strtotime('+1 year'), '/');
 			# Send them to the main page - or whever you want them to go
 			Router::redirect("/");

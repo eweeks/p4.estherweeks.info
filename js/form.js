@@ -5,7 +5,6 @@ Validator for adding a new file
 	// validate signup form on keyup and submit
 	var validator = $("#file_form").validate({
 		rules: {
-			 // no quoting necessary
 			number: {
 				required: true,
 				maxlength: 16
