@@ -14,7 +14,7 @@ class index_controller extends base_controller {
 		$this->template->content = View::instance('v_index_index');
 			
 		# Sets Title
-		$this->template->title = "Hello World";
+		$this->template->title = "Photo File";
 		
 		# Render the view
 		echo $this->template;

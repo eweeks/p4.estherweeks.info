@@ -68,8 +68,8 @@
 	<?php if(isset($content)) echo $content; ?>
 
 	<?php if(isset($client_files_body)) echo $client_files_body; ?>
-		<script type="text/javascript" charset="utf8" src="/js/jquery-1.10.2.min.js"></script><!-- jquery-->
-		<script type="text/javascript" charset="utf8" src="/js/jquery.dataTables.min.js"></script><!--script for/from dataTables-->
+		<script type="text/javascript" charset="utf-8" src="/js/jquery-1.10.2.min.js"></script><!-- jquery-->
+		<script type="text/javascript" charset="utf-8" src="/js/jquery.dataTables.min.js"></script><!--script for/from dataTables-->
 		<script src="/js/bootstrap.min.js"></script><!-- bootstrap script-->
 		<script src="/js/jquery-ui-1.10.3.custom.min.js"></script><!-- script for jquery ui- used for date picker-->
 		<script src="/js/jquery.validate.js"></script><!--script for jquery validate-->
