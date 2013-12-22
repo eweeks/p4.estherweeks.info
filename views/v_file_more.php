@@ -1,6 +1,8 @@
 <div>
 	<a href='/file/edit/<?=$more['file_id']?>'  title="Edit File">Edit File</a>
+	<br>
 	<a href='/file/delete/<?=$more['file_id']?>'  title="Delete File">Delete File</a>
+	<br>
 	<table id="more" class="display">
 		<thead>
 			<tr>

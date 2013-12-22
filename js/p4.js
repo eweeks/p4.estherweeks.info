@@ -22,6 +22,7 @@ $(document).ready(function() {
          null,
        ],
        "iDisplayLength": 30,
+       "sDom": 'frt', 
        
      } );
 	

@@ -112,3 +112,58 @@ Validator for adding a new project
 				error.appendTo( element.parent().next() );
 		}
 	});//end validator
+	
+	/*-------------------------------------------------------------------------------------------------
+Validator for Sign Up
+-------------------------------------------------------------------------------------------------*/
+
+	// validate signup form on keyup and submit
+	var validator = $("#sign_up").validate({
+		rules: {
+			first_name: {
+				required: true,
+				maxlength: 60
+			},
+			last_name: {
+				required: true,
+				maxlength: 60
+			},
+			email: {
+				required: true,
+				email: true,
+			},
+			password: {
+				required: true,
+				maxlength: 15
+			}
+		
+		},
+		messages: {
+			first_name: {
+				required: "Provide a First Name ",
+				rangelength: jQuery.format("Enter no more than {0} characters")
+			},
+			last_name: {
+				required: "Provide a Last Name ",
+				rangelength: jQuery.format("Enter no more than {0} characters")
+			},
+			email: {
+				required: "Please enter a valid email address",
+				minlength: "Please enter a valid email address",
+			},
+			password: {
+				required: "Provide a password ",
+				rangelength: jQuery.format("Enter no more than {0} characters")
+			}
+		},
+		
+		// the errorPlacement has to take the table layout into account
+		errorPlacement: function(error, element) {
+			if ( element.is(":radio") )
+				error.appendTo( element.parent().next().next() );
+			else if ( element.is(":checkbox") )
+				error.appendTo ( element.next() );
+			else
+				error.appendTo( element.parent().next() );
+		}
+	});//end validator
