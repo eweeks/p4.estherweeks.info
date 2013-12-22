@@ -110,6 +110,7 @@ class file_controller extends base_controller {
 	public function edit($file_id){
 		# Set up the View
 		$this->template->content = View::instance('v_file_edit');
+		$this->template->title   = "Edit File";
 		
 		# Query
 		$q = 'SELECT * FROM files WHERE file_id = ';
