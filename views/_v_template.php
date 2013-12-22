@@ -74,6 +74,6 @@
 		<script src="/js/jquery-ui-1.10.3.custom.min.js"></script><!-- script for jquery ui- used for date picker-->
 		<script src="/js/jquery.validate.js"></script><!--script for jquery validate-->
 		<script src="/js/form.js"></script> <!-- My script for form checking-->
-		<script type="text/javascript" language="javascript" src="/js/p4.js"></script><!-- My js for pages-->
+		<script type="text/javascript" src="/js/p4.js"></script><!-- My js for pages-->
 </body>
 </html>
