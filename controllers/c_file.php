@@ -91,6 +91,7 @@ class file_controller extends base_controller {
 	public function more($file_id) {
 		# Set up the View
 		$this->template->content = View::instance('v_file_more');
+		$this->template->title   = "View File";
 		
 		# Query
 		$q = 'SELECT * FROM files WHERE file_id = ';
