@@ -11,7 +11,7 @@
 				<h2><?=$project['project_name']?></h2> 
 				<p><?=$project['project_description']?></p>
 				<p class="time">Created:
-					<time>
+					<time datetime="<?=Time::display($project['created'],'Y-m-d G:i')?>">
 						<?=Time::display($project['created'])?>
 					</time>
 				</p>
