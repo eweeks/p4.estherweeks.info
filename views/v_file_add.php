@@ -175,7 +175,7 @@
 			</div>
 			<!--Scanned-->
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="Scanned"><span class="glyphicon glyphicon-check"></span> Scanned?</label>
+				<label class="col-sm-2 control-label" ><span class="glyphicon glyphicon-check"></span> Scanned?</label>
 				<select name="scanned" id="scanned" title="Has the File Been Scanned?">
 					<option>No</option>
 					<option>Yes</option>
@@ -201,7 +201,7 @@
 			</div>
 			<!--Starred-->
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="Starred">
+				<label class="col-sm-2 control-label">
 					<span class="glyphicon glyphicon-check"></span> Starred?</label>
 				<select name="starred" id="starred" title="Star Image to Mark as Important">
 					<option>No</option>
