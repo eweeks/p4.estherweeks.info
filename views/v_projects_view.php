@@ -16,9 +16,9 @@
 		<p>Stored:<?=$project['stored']?></p>
 		<p>Date of file:<?=$project['date_start']?> </p>
 		
-		<a  href="#fileModal"  title="Delete File" data-toggle="modal">Delete File</a>
+		<a  href="#fileModal<?=$project['name']?>"  title="Delete File" data-toggle="modal">Delete File</a>
 		<!--modal content for delete file -->
-			<div id="fileModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="fileModalLabel" aria-hidden="true">
+			<div id="fileModal<?=$project['name']?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="fileModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
