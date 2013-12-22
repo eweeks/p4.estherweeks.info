@@ -44,6 +44,10 @@
 				<td><?=$more['date_end']?></td>
 			</tr>
 			<tr>
+				<td>Photographer</td>
+				<td><?=$more['photographer']?></td>
+			</tr>
+			<tr>
 				<td>Name</td>	
 				<td><?=$more['name']?></td> 
 			</tr>
