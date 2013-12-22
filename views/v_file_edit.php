@@ -192,7 +192,7 @@
 			
 			<!--Scanned-->
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="Scanned"> <span class="glyphicon glyphicon-check"></span> Scanned?</label>
+				<label class="col-sm-2 control-label"> <span class="glyphicon glyphicon-check"></span> Scanned?</label>
 				<select name="scanned" id="scanned" title="Has the File Been Scanned?">
 					<option selected="Selected"><?=$present['scanned']?></option>
 					<option>No</option>
@@ -222,7 +222,7 @@
 			
 			<!--Starred-->
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="Starred"> <span class="glyphicon glyphicon-check"></span> Starred?</label>
+				<label class="col-sm-2 control-label"> <span class="glyphicon glyphicon-check"></span> Starred?</label>
 				<select name="starred" id="starred" title="Star Image to Mark as Important">
 					<option selected="Selected"><?=$present['starred']?></option>
 					<option>No</option>
