@@ -11,7 +11,7 @@
 					<label class="col-sm-2 control-label">Enter Name</label>
 					<div class="col-sm-6">
 						<input type="text" class="form-control" id="project_name" placeholder="Project Name" 
-						name='project_name' maxlength="18">
+						name='project_name' maxlength="42">
 					</div>
 					<div class="status"></div>
 				</div>
@@ -20,7 +20,7 @@
 					<label class="col-sm-2 control-label">Enter Description</label>
 					<div class="col-sm-6">
 						<input type="text" class="form-control" id="project_description" placeholder="Project Description" 
-						name='project_description' maxlength="35">
+						name='project_description' maxlength="42">
 					</div>
 					<div class="status"></div>
 				</div>

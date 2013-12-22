@@ -100,6 +100,10 @@
 				<td><?=$more['starred']?></td>
 			</tr>
 			<tr>
+				<td>Notes</td>
+				<td><?=$more['notes']?></td>
+			</tr>			
+			<tr>
 				<td>Created</td>
 				<td><?=Time::display($more['created'],'Y-m-d G:i')?></td>
 			</tr>

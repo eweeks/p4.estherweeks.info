@@ -1,11 +1,9 @@
-<p>Edit Page for Files</p>
+<h1>Edit Page for Files</h1>
 
 <div class="row" id="formcss">
 	<div class="col-md-12 col-sm-12">
-		<h2 >Edit File</h2>
 		<form method='POST' action='/file/f_edit/<?=$present['file_id']?>' class="form-horizontal" role="form" id="file_form">
 			<!--	New File Input	-->
-			<p>Enter info for file here</p>
 			<p>Note: Current file information is filled in. </p>
 			<p class="orange"><span class="glyphicon glyphicon-check"></span> marks required fields</p>
 			
@@ -24,7 +22,7 @@
 				<label class="col-sm-2 control-label"> <span class="glyphicon glyphicon-check"></span> Enter Name</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="name" placeholder="Name" 
-					name='name' maxlength="35" value="<?=$present['name']?>">
+					name='name' maxlength="42" value="<?=$present['name']?>">
 				</div>	
 				<div class="status"></div>
 			</div>

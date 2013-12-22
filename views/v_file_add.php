@@ -20,7 +20,7 @@
 				<label class="col-sm-2 control-label"><span class="glyphicon glyphicon-check"></span> Enter Name</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="name" placeholder="Name" 
-					name='name' maxlength="35">
+					name='name' maxlength="42">
 				</div>	
 				<div class="status"></div>
 			</div>

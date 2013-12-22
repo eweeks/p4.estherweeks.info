@@ -29,7 +29,7 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label"><span class="glyphicon glyphicon-check"></span> Email</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="email" placeholder="Email" name='email' maxlength="20">
+					<input type="text" class="form-control" id="email" placeholder="Email" name='email' maxlength="42">
 				</div>
 				<div class="status"></div>
 			</div>

@@ -11,7 +11,7 @@ Validator for adding a new file
 			},
 			name: {
 				required: true,
-				maxlength: 16
+				maxlength: 32
 			},
 			date_start: {
 				required: true,
@@ -131,6 +131,7 @@ Validator for Sign Up
 			email: {
 				required: true,
 				email: true,
+				maxlength: 35
 			},
 			password: {
 				required: true,
